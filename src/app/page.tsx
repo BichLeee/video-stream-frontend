@@ -12,12 +12,12 @@ export default function Home() {
         <div className={styles.page}>
             <main className={styles.main}>
                 <Content>
-                    <Image
+                    {/* <Image
                         src={NgocBich.src}
                         alt="pretty"
                         width={500}
                         height={300}
-                    />
+                    /> */}
                     <Introduction />
                 </Content>
             </main>
@@ -25,6 +25,4 @@ export default function Home() {
     );
 }
 
-const Content = styled.div`
-    margin: 1rem;
-`;
+const Content = styled.div``;

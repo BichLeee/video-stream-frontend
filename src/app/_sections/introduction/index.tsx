@@ -2,9 +2,9 @@ import { Button, Typography } from "antd";
 
 export const Introduction = () => {
     return (
-        <section>
+        <div>
             <Typography>Ngoc Bich</Typography>
             <Button>click</Button>
-        </section>
+        </div>
     );
 };
