@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+
 import "./globals.css";
-import { ConfigProvider } from "antd";
-import { MainLayout } from "./_layouts";
+import { MainLayout } from "./_components/layouts";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -16,46 +16,13 @@ const roboto = Roboto({
 
 export default function RootLayout({
     children,
-}: Readonly<{
+}: {
     children: React.ReactNode;
-}>) {
+}) {
     return (
         <html lang="en">
             <body className={roboto.className}>
-                <ConfigProvider
-                    theme={{
-                        components: {
-                            Button: {
-                                defaultColor: "#d9d9d9",
-                                colorPrimary: "#0000000d",
-                                colorPrimaryHover: "#0000001a",
-                                colorPrimaryActive: "#0000001a",
-                                textHoverBg: "#0000001a",
-                                colorPrimaryBg: "",
-                                // contentFontSizeSM: 10,
-                                // contentLineHeightSM: 1.5,
-                                // paddingBlockSM: 8,
-                                // paddingInlineSM: 20,
-                                controlHeightSM: 32,
-                                // contentFontSize: 12,
-                                // contentLineHeight: 1.5,
-                                // paddingBlock: 10,
-                                // paddingInline: 24,
-                                controlHeight: 36,
-                                // contentFontSizeLG: 14,
-                                // contentLineHeightLG: 22 / 14,
-                                // paddingBlockLG: 13,
-                                // paddingInlineLG: 32,
-                                controlHeightLG: 40,
-                            },
-                            Checkbox: {
-                                colorPrimary: "#ff4d4f",
-                            },
-                        },
-                    }}
-                >
-                    <MainLayout>{children}</MainLayout>
-                </ConfigProvider>
+                <MainLayout>{children}</MainLayout>
             </body>
         </html>
     );

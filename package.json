@@ -9,13 +9,15 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@ant-design/cssinjs": "^1.23.0",
         "@svgr/webpack": "^8.1.0",
-        "@types/styled-components": "^5.1.34",
         "antd": "^5.24.0",
-        "next": "15.1.7",
+        "lodash": "^4.17.21",
+        "next": "^15.2.2",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
-        "styled-components": "^6.1.15"
+        "react-router-dom": "^7.3.0",
+        "sass": "^1.86.0"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",

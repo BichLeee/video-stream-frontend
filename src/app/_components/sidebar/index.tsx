@@ -1,5 +1,12 @@
 "use client";
 
+import { Flex } from "antd";
+import type { MenuProps } from "antd";
+import Link from "next/link";
+import { useState } from "react";
+import { useParams } from "next/navigation";
+import classNames from "classnames/bind";
+
 import {
     IconChannelOutlined,
     IconHomeOutlined,
@@ -7,11 +14,10 @@ import {
     IconUserOutlined,
 } from "@/components/SVGs";
 import { Typography } from "@/components/typography";
-import { Flex } from "antd";
-import type { MenuProps } from "antd";
-import Link from "next/link";
-import { useState } from "react";
-import styled from "styled-components";
+
+import s from "./sidebar.module.scss";
+
+const cx = classNames.bind(s);
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -43,43 +49,35 @@ type SidebarProps = {
 };
 
 export const Sidebar = ({ collapsed = false }: SidebarProps) => {
+    const params = useParams();
+    const lang = params?.lang || "en";
+
     const [activeItem, setActiveItem] = useState(items[0]?.key);
+
     return (
-        <Menu style={collapsed ? { width: "fit-content" } : { width: 200 }}>
-            <MenuSection collapsed={collapsed}>
-                {items.map((i) => (
-                    <MenuItem
-                        href={i?.href || "/"}
+        <div className={cx("menu", collapsed && "collapsed")}>
+            <div className={cx("menuSection", collapsed && "collapsed")}>
+                {items.map((i: any) => (
+                    <Link
+                        href={i?.href ? `/${lang}${i.href}` : `/${lang}/`}
                         key={i?.key}
                         onClick={() => setActiveItem(i?.key)}
-                        style={
-                            activeItem === i?.key && !collapsed
-                                ? {
-                                      backgroundColor: "#0000000d",
-                                      fontWeight: 500,
-                                  }
-                                : {}
-                        }
-                        active={activeItem === i?.key}
-                        collapsed={collapsed}
-                        {...(collapsed && { justify: "center" })}
+                        className={cx(
+                            "menuItem",
+                            activeItem === i?.key && "active",
+                            collapsed && "collapsed",
+                        )}
                     >
                         <Flex
                             vertical
                             align="center"
-                            style={
-                                collapsed
-                                    ? {
-                                          paddingTop: 20,
-                                          paddingBottom: 14,
-                                          width: 64,
-                                          height: 74,
-                                      }
-                                    : { width: 48 }
-                            }
                             gap={5}
+                            className={cx(
+                                "menuItemCollapsed",
+                                collapsed && "collapsed",
+                            )}
                         >
-                            <Icon>{i?.icon}</Icon>
+                            <div className={cx("icon")}>{i?.icon}</div>
                             {collapsed && (
                                 <Typography
                                     variant="body1"
@@ -97,41 +95,9 @@ export const Sidebar = ({ collapsed = false }: SidebarProps) => {
                                 </Typography>
                             </div>
                         )}
-                    </MenuItem>
+                    </Link>
                 ))}
-            </MenuSection>
-        </Menu>
+            </div>
+        </div>
     );
 };
-
-const Menu = styled.div`
-    position: fixed;
-    left: 0;
-    height: 100%;
-`;
-
-const MenuItem = styled(Link)`
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    width: 100%;
-    height: ${(props) => (props.collapsed ? "74px" : "40px")};
-    border-radius: 10px;
-    background: ${(props) =>
-        props.active && !props.collapsed ? "#0000000d" : "unset"};
-
-    &:hover {
-        background: #0000000d;
-        color: inherit;
-    }
-`;
-
-const Icon = styled.div`
-    width: 24px;
-    height: 24px;
-`;
-
-const MenuSection = styled.div`
-    padding-inline: ${(props) => (props.collapsed ? "4px" : "12px")};
-    padding-block: ${(props) => (props.collapsed ? "0" : "12px")};
-`;

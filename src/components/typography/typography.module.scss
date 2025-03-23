@@ -1,0 +1,56 @@
+.typography {
+    line-height: normal;
+    &.ant-typography,
+    &.ant-typography p {
+        margin: 0;
+    }
+    &.hatemen-h1 {
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 28px;
+        text-transform: uppercase;
+    }
+    &.hatemen-h2 {
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 36px;
+        text-transform: uppercase;
+    }
+    &.hatemen-h3 {
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        text-transform: uppercase;
+    }
+    &.hatemen-h4 {
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+    }
+    &.hatemen-body {
+        color: var(--primary);
+        font-size: 14px;
+        line-height: 20px;
+    }
+    &.hatemen-body1 {
+        color: var(--primary);
+        font-size: 10px;
+        line-height: 14px;
+    }
+    &.hatemen-body2 {
+        color: var(--textSecondary);
+        font-size: 14px;
+        line-height: 20px;
+    }
+    &.hatemen-label1 {
+        color: var(--primary);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+}

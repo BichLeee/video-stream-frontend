@@ -1,13 +1,28 @@
-:root {
-    --background: #ffffff;
-    --foreground: #171717;
+/* Default (Light Theme) */
+:root[data-theme="light"] {
+    --primary: #0f0f0f;
+    --background: #fff;
+    --textSecondary: #606060;
+    --borderColor: #0000001a;
+    --bgSecondary: #fff;
+    --bgHoverColor: #f0f0f0; /*for button*/
+    --bgHoverColor2: #0000000d;
+    --bgHoverColorButton: #0000001a;
+    --bgColorButton: transparent;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
+/* Dark Theme */
+:root[data-theme="dark"] {
+    --primary: #fff;
+    --background: #0f0f0f;
+    --bgHoverColor: #ffffff14;
+    --textSecondary: #aaa;
+    --borderColor: #ffffff4d;
+    --bgSecondary: #212121;
+    --bgHoverColor: #ffffff1a;
+    --bgHoverColor2: #ffffff1a; /*for button*/
+    --bgHoverColorButton: #ffffff1a; /*for button*/
+    --bgColorButton: transparent;
 }
 
 html,
@@ -17,7 +32,7 @@ body {
 }
 
 body {
-    color: var(--foreground);
+    color: var(--primary);
     background: var(--background);
     font-family: Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -42,7 +57,54 @@ a {
 }
 
 /*popover*/
+.ant-popover {
+    max-width: inherit !important;
+}
+
 .ant-popover-inner {
     padding: 0px !important;
     border-radius: 12px !important;
+    background: var(--bgSecondary) !important;
+}
+
+/*Dropdown*/
+.ant-dropdown {
+    z-index: 10;
+}
+
+.ant-dropdown .ant-dropdown-menu-item-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px !important;
+}
+
+.ant-dropdown-menu {
+    padding: 8px 0px !important;
+    background-color: var(--bgSecondary) !important;
+}
+
+.ant-dropdown-menu-item-only-child {
+    position: relative;
+
+    & .ant-dropdown-menu-title-content {
+        margin-left: 46px;
+    }
+
+    &.ant-dropdown-menu-item-selected {
+        background-color: transparent !important;
+        color: var(--primary) !important;
+    }
+
+    &.ant-dropdown-menu-item-selected::before {
+        position: absolute;
+        left: 16px;
+        content: "";
+        width: 24px;
+        height: 24px;
+        background-image: url("/check.svg");
+    }
+
+    [data-theme="dark"] &.ant-dropdown-menu-item-selected::before {
+        filter: invert(1);
+    }
 }

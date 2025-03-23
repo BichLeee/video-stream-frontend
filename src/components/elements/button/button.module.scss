@@ -1,0 +1,38 @@
+.button {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+
+    &.ant-btn .ant-btn-icon {
+        display: flex;
+    }
+
+    &.hate-men-btn-default-alt1 {
+        border-color: var(--borderColor);
+        padding: 0 15px !important;
+        height: 36px;
+        font-size: 14px;
+        background-color: transparent !important;
+
+        &:hover {
+            border-color: transparent !important;
+        }
+    }
+
+    [data-theme="light"] &.hate-men-btn-default-alt1 {
+        color: #065fd4;
+        &:hover {
+            color: #065fd4 !important;
+            background: #def1ff !important;
+        }
+    }
+
+    [data-theme="dark"] &.hate-men-btn-default-alt1 {
+        color: var(--primary) !important;
+        &:hover {
+            background: var(--bgHoverColor) !important;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.dropdown {
+    font-weight: 400;
+    font-size: 14px;
+
+    &.hate-men-btn-default-alt1 {
+        color: #065fd4;
+        border-color: rgba(0, 0, 0, 0.1);
+        padding: 0 15px !important;
+        height: 36px;
+        font-size: 14px;
+
+        &:hover {
+            background: #def1ff !important;
+            border-color: transparent !important;
+            color: #065fd4 !important;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.navigation {
+    display: flex;
+    flex-flow: row nowrap;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    padding-inline: 16px;
+    height: 56px;
+    width: 100%;
+    z-index: 1;
+    background: var(--background);
+}
+
+.sup {
+    font-size: 10px;
+    color: #606060;
+    position: absolute;
+    right: -20px;
+    top: -5px;
+}

@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    webpack(config, { isServer }) {
+    webpack(config) {
         config.module.rules.push({
             test: /\.svg$/,
             use: [
@@ -14,9 +14,15 @@ const nextConfig: NextConfig = {
 
         return config;
     },
-    compiler: {
-        styledComponents: true,
+    sassOptions: {
+        additionalData: `$var: red;`,
     },
+    i18n: {
+        locales: ["default", "vi"],
+        defaultLocale: "default",
+        localeDetection: false,
+    },
+    trailingSlash: true,
 };
 
 export default nextConfig;

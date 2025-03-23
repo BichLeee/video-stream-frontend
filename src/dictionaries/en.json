@@ -1,0 +1,20 @@
+{
+    "header": {
+        "search": "Search",
+        "login": "Log in",
+        "appearance": "Appearance",
+        "dark_theme": "Dark Theme",
+        "light_theme": "Light Theme",
+        "language": "Language",
+        "choose_your_language": "Choose your language",
+        "english": "English",
+        "vietnamese": "Vietnamese",
+        "settings": "Settings"
+    },
+    "sidebar": {
+        "home": "Home",
+        "shorts": "Shorts",
+        "suscriptions": "Suscriptions",
+        "you": "You"
+    }
+}

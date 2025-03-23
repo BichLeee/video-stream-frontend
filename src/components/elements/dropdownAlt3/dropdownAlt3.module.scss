@@ -1,0 +1,76 @@
+.dropdown {
+    font-weight: 400;
+    font-size: 14px;
+
+    &.hate-men-btn-default-alt1 {
+        color: #065fd4;
+        border-color: rgba(0, 0, 0, 0.1);
+        padding: 0 15px !important;
+        height: 36px;
+        font-size: 14px;
+
+        &:hover {
+            background: #def1ff !important;
+            border-color: transparent !important;
+            color: #065fd4 !important;
+        }
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding-block: 4px;
+    min-width: 300px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 32px 0 #0000001a;
+}
+
+.menuHeader {
+    position: relative;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid #f0f0f0;
+    width: 100%;
+    align-items: center;
+    padding-inline: 4px;
+    padding-bottom: 4px;
+}
+
+.menuItem {
+    position: relative;
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    padding-inline: 16px 38px;
+    gap: 12px;
+
+    &:hover {
+        background-color: #0000000d;
+    }
+}
+
+.icon {
+    height: 24px;
+    & > svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin-block: 8px;
+}
+
+.expandButton {
+    position: absolute;
+    right: 16px;
+    top: calc(50% - 12px);
+    width: 24px;
+    height: 24px;
+}

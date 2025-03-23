@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
-import styled from "styled-components";
 import { Typography as AntTypography } from "antd";
+
+import s from "./typography.module.scss";
 
 const { Paragraph } = AntTypography;
 
@@ -19,7 +22,7 @@ type TypographyProps = {
         | "body3"
         | "body4"
         | "body5"
-        | "body6";
+        | "label1";
     rootClassName?: string;
     style?: React.CSSProperties;
     align?: React.CSSProperties["textAlign"];
@@ -85,78 +88,13 @@ export const Typography = ({
         };
 
     return (
-        <StyledText
-            className={`hatemen-${variant} ${rootClassName}`}
+        <Paragraph
+            className={s[`hatemen-${variant} ${rootClassName}`]}
             onClick={onClick}
             style={inline}
             {...props}
         >
             {children}
-        </StyledText>
+        </Paragraph>
     );
 };
-
-const StyledText = styled(Paragraph)`
-    line-height: normal;
-    &.ant-typography,
-    &.ant-typography p {
-        margin: 0;
-    }
-    &.hatemen-h1 {
-        color: #0f0f0f;
-        font-weight: 600;
-        font-size: 32px;
-        line-height: 48px;
-        letter-spacing: 1.6px;
-        text-transform: uppercase;
-    }
-    &.hatemen-h2 {
-        color: #0f0f0f;
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 36px;
-        letter-spacing: 1.2px;
-        text-transform: uppercase;
-    }
-    &.hatemen-h3 {
-        color: #0f0f0f;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 30px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-    &.hatemen-h4 {
-        color: #0f0f0f;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: 0.8px;
-        text-transform: uppercase;
-    }
-    &.hatemen-h5 {
-        color: #0f0f0f;
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 22px;
-        text-transform: uppercase;
-    }
-    &.hatemen-h6 {
-        color: #0f0f0f;
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 18px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-    &.hatemen-body {
-        color: #0f0f0f;
-        font-size: 14px;
-        line-height: 20px;
-    }
-    &.hatemen-body1 {
-        color: #0f0f0f;
-        font-size: 10px;
-        line-height: 14px;
-    }
-`;

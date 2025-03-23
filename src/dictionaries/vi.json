@@ -1,0 +1,20 @@
+{
+    "header": {
+        "search": "Tìm kiếm",
+        "login": "Đăng nhập",
+        "appearance": "Giao diện",
+        "dark_theme": "Giao diện tối",
+        "light_theme": "Giao diện sáng",
+        "language": "Ngôn ngữ",
+        "choose_your_language": "Chọn ngôn ngữ của bạn",
+        "english": "English",
+        "vietnamese": "Tiếng Việt",
+        "settings": "Cài đặt"
+    },
+    "sidebar": {
+        "home": "Trang chủ",
+        "shorts": "Shorts",
+        "suscriptions": "Kênh đăng ký",
+        "you": "Bạn"
+    }
+}
